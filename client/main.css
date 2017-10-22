@@ -16,6 +16,10 @@ input[type=text], select {
 {
     background-image: url(http://www.comunidadbaratz.com/wp-content/uploads/libro-edicion-2015.jpg);
 }
+.comentario
+{
+    word-wrap: break-word;
+}
 
 .imagenJumbo {
     width: 100%;
@@ -115,6 +119,10 @@ statsTable
     display:block;
     margin:auto;
 
+}
+.loginButton
+{
+    justify-content:right;
 }
 .landdl
 {

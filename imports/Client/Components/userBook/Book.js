@@ -23,9 +23,9 @@ class Book extends Component {
                 <br />
                 <div className="row contenedora">
                     <div className="col-sm-4 ">
-                        Titulo: <h3>{this.props.book.text}</h3>
+
                         <br />
-                        <img src={this.props.book.imagen} onClick={this.mostrarImagen.bind(this)} alt="" height="100" width="100" /><br />
+                        <img className="imagenLibro" src={this.props.book.imagen} onClick={this.mostrarImagen.bind(this)} alt="" height="100" width="100" /><br />
                         {this.props.currentUser ?
                             <form className={this.props.book.mI} onSubmit={this.cambiarImagen.bind(this)}>
                                 <input type="text" ref="textInputIm" placeholder="Direccion url de la imagen" />
@@ -45,24 +45,33 @@ class Book extends Component {
                         <p ><img onClick={this.darDislike.bind(this)} src="https://timedotcom.files.wordpress.com/2014/12/dislike.jpeg?h=580" alt="" height="50" width="55" />: {this.props.book.dislikes} </p>
                     </div>
                     <div className="col-sm-8 ">
-                        <h2 className="tituloLibro">Historia:</h2><br />
-                        {this.props.currentUser ?
-                            <form onSubmit={this.editarStory.bind(this)}>
-                                <input type="text" ref="textInput" placeholder="Agregar historia" />
-                            </form> : ''}
+                        <h2 className="tituloLibro">{this.props.book.text}</h2><br />
+
                         <p className="historia">{this.props.book.texto}</p>
                         {this.props.currentUser ?
-                            <button className="delete btn" onClick={this.deleteThisTask.bind(this)}> Borrar Libro</button> : ''}
-                        <p><span className="text">
+                            <form onSubmit={this.editarStory.bind(this)}>
+                                <input type="text" ref="textInput" placeholder="Continuar con la historia" />
+                            </form> : ''}
+
+                            <p><span className="text">
+                            <br/>
                             Escrito por:<strong>{this.props.book.username}</strong>
                         </span></p><br />
-                        <p>Comentarios:</p>
+
+                        <strong>Comentarios</strong>
+
+                        <p className="comentario">{this.props.book.comments}</p>
                         {this.props.currentUser ?
                             <form onSubmit={this.addComment.bind(this)}>
                                 <input type="text" ref="textInputco" placeholder="Agregar Comentario" />
                             </form> : ''}
-                        <p className="comentario"><textarea readOnly>{this.props.book.comments}</textarea></p></div>
+                        <br/>
+                        {this.props.currentUser ?
+                            <button className="delete btn" onClick={this.deleteThisTask.bind(this)}> Borrar Libro</button> : ''}
+                        <br/><br/></div>
+
                     <button className={this.props.book.botonBusqueda} onClick={this.salirBusqueda.bind(this)}>Salir de Busqueda</button>
+                    <br/><br/>
                 </div>
                 <br />
                 <br />
@@ -109,7 +118,7 @@ class Book extends Component {
     }
     addComment() {
         const text = ReactDOM.findDOMNode(this.refs.textInputco).value.trim();
-        nText = (this.props.book.comments + "\n" + text + "               usuario:" + Meteor.user().username +".");
+        nText = (this.props.book.comments + "\n" + text + "\n" + "Comentado por:" + Meteor.user().username +".");
         Meteor.call('books.addComment', this.props.book._id, nText);
     }
     cambiarImagen() {

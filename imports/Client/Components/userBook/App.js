@@ -68,9 +68,18 @@ class App extends Component {
             <div className="container">
                 <Header/>
                 <br/><br/><br/><br/>
-                    <h1>Books List</h1>
+                <div className="row">
+                    <div className="col-sm-10">
+                        <h1>Lista de Libros</h1>
+                </div>
+                    <div className="col-sm-2"> <br/><br/>
 
-                <AccountsUIWrapper />
+                        <AccountsUIWrapper/></div>
+
+
+                </div>
+
+
                 <h3>Buscar Libro</h3>
                 <form className="new-task" onSubmit={this.handleChange.bind(this)} ><p><input
                         type="text"
@@ -85,7 +94,7 @@ class App extends Component {
                         <p><input
                             type="text"
                             ref="textInput"
-                            placeholder="Escriba nombre del nuevo libro" /></p>
+                            placeholder="Escribe el nombre de tu nuevo libro" /></p>
                     </form> </div>: ''
                     }
                 <ul>
