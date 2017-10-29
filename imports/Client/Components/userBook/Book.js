@@ -70,6 +70,9 @@ class Book extends Component {
                                 </form></div> : ''}
                         <br/><br/>
 
+
+                        
+
                         <strong>Comentarios</strong>
 
                         <p className="comentario">{this.props.book.comments}</p>
@@ -138,7 +141,7 @@ class Book extends Component {
     }
     addComment() {
         const text = ReactDOM.findDOMNode(this.refs.textInputco).value.trim();
-        nText = (this.props.book.comments + "\n" + text + "\n" + "Comentado por:" + Meteor.user().username +".");
+        nText = (this.props.book.comments + "\n" + text + "\n" + "Comentado por:" + Meteor.user().username +".\n" + "\n" );
         Meteor.call('books.addComment', this.props.book._id, nText);
     }
     cambiarImagen() {
