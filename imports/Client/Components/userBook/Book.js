@@ -28,18 +28,18 @@ class Book extends Component {
                         <img className="imagenLibro" src={this.props.book.imagen} onClick={this.mostrarImagen.bind(this)} alt="" height="100" width="100" /><br />
                         {this.props.currentUser ?
                             <form className={this.props.book.mI} onSubmit={this.cambiarImagen.bind(this)}>
-                                <input type="text" ref="textInputIm" placeholder="Direccion url de la imagen" />
+                                <input type="text" ref="textInputIm" placeholder="Direccion url de la imagen" aria-label = "Direccion url de la imagen" />
                             </form> : ''}
                         <br />
                         <p className="descLibro" onClick={this.mostrarGenero.bind(this)}>Genero: {this.props.book.genero}</p>
                         {this.props.currentUser ?
                             <form className={this.props.book.mG} onSubmit={this.editarGenre.bind(this)}>
-                                <input type="text" ref="textInputi" placeholder={this.props.book.genero} />
+                                <input type="text" ref="textInputi" placeholder={this.props.book.genero} aria-label = "Nuevo Genero del libro"/>
                             </form> : ''}
                         <p className="descLibro" onClick={this.mostrarIdioma.bind(this)}> idioma: {this.props.book.idioma}</p>
                         {this.props.currentUser ?
                             <form className={this.props.book.mL} onSubmit={this.editarLan.bind(this)}>
-                                <input type="text" ref="textInputo" placeholder={this.props.book.idioma} />
+                                <input type="text" ref="textInputo" placeholder={this.props.book.idioma} aria-label = "Nuevo idioma del libro"/>
                             </form> : ''}
                         <p > <img onClick={this.darLike.bind(this)} src="https://noticiasmicrojuris.files.wordpress.com/2013/10/facebook-like.png" alt="" height="60" width="60" /> : {this.props.book.likes} </p>
                         <p ><img onClick={this.darDislike.bind(this)} src="https://timedotcom.files.wordpress.com/2014/12/dislike.jpeg?h=580" alt="" height="50" width="55" />: {this.props.book.dislikes} </p>
@@ -50,7 +50,7 @@ class Book extends Component {
                         <p className="historia">{this.props.book.texto}</p>
                         {this.props.currentUser ?
                             <form onSubmit={this.editarStory.bind(this)}>
-                                <input type="text" ref="textInput" placeholder="Continuar con la historia" />
+                                <input type="text" ref="textInput" placeholder="Continuar con la historia" aria-label = "Agregar una nueva parte a la historia" />
                             </form> : ''}
 
                             <p><span className="text">
@@ -63,10 +63,10 @@ class Book extends Component {
                         <p className="comentario">{this.props.book.comments}</p>
                         {this.props.currentUser ?
                             <form onSubmit={this.addComment.bind(this)}>
-                                <input type="text" ref="textInputco" placeholder="Agregar Comentario" />
+                                <input type="text" ref="textInputco" placeholder="Agregar Comentario" aria-label = "Agregar nuevo comentario"/>
                             </form> : ''}
                         <br/>
-                        {this.props.currentUser ?
+                        {Meteor.user().username === this.props.book.username ?
                             <button className="delete btn" onClick={this.deleteThisTask.bind(this)}> Borrar Libro</button> : ''}
                         <br/><br/></div>
 
@@ -130,7 +130,14 @@ class Book extends Component {
     }
 
     deleteThisTask() {
-        Meteor.call('books.remove', this.props.book._id);
+        if(this.props.book.username === Meteor.user().username)
+        {
+            Meteor.call('books.remove', this.props.book._id);
+        }
+        else {
+            alert("Solo puedes borrar libros de tu autoria");
+        }
+
     }
 }
 Book.propTypes = {

@@ -9,7 +9,7 @@ export default class App extends Component
                     <div className="container iniMainPage ">
                         <img className="img-fluid" src="./images/profile.png" alt=""/>
                             <div className="row text-center">
-                                <h2>Bienvenido a Books</h2>
+                                <h2 className="tituMainPage">Bienvenido a Books</h2>
 
                                 <br/><br/><br/>
 

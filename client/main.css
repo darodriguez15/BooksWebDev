@@ -22,8 +22,10 @@ input[type=text], select {
 }
 
 .imagenJumbo {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
+    margin:10px auto;
+    display:block;
 }.lema
 {
    font-style: italic;
@@ -114,15 +116,28 @@ statsTable
     border-collapse: separate;
 
 }
+.empecemos
+{
+    margin: auto;
+    height: 90%;
+    width: 90%;
+
+}
 .ima{
 
     display:block;
     margin:auto;
+    width: 80%;
+    height: 80%;
 
 }
 .loginButton
 {
     justify-content:right;
+}
+.tituMainPage
+{
+    color: #3175b0;
 }
 .landdl
 {
@@ -154,6 +169,12 @@ statsTable
 }
 .descripcion{
     text-align: justify;
+
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+
 }
 .fotoPerfil
 {
@@ -188,10 +209,13 @@ statsTable
     height: 10%;
 }
 
-
+.navi
+{
+    color: #fff;
+}
 .jumbotron
 {
-    background:#101010;
+    background:#fff;
     align-items: center;
 }
 .col-sm-4

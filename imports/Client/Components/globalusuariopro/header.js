@@ -14,11 +14,11 @@ export default class App extends Component
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href="/user">Books</a>
+                            <a className="navbar-brand navi" href="/user">Books</a>
                         </div>
                         <div id="navbar" className  ="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="/userBooks">Mirar libros</a></li>
+                                <li><a href="/userBooks">Empecemos</a></li>
                             </ul>
                         </div>
 

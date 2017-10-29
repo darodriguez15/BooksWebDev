@@ -26,13 +26,7 @@ class App extends Component {
                 <header>
                     <h1>Listado de libros</h1>
                 </header>
-                <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
-                    <input
-                        type="text"
-                        ref="textInput"
-                        placeholder="Type to add new tasks"
-                    />
-                </form>
+
 
                     {this.renderTasks()}
 

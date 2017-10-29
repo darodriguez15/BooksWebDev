@@ -11,7 +11,9 @@ export default class App extends Component
                 <br/>
 
                 <section className="jumbotron ">
+
                     <div className="container">
+
                         <img className="img-fluid imagenJumbo" src="https://i1.wp.com/hipertextual.com/files/2017/04/libros-libreria-autores.jpg?fit=1000%2C658&ssl=1" alt=""/>
                         <div className="row text-center">
                             <br/>
@@ -38,10 +40,16 @@ export default class App extends Component
                 <br/><br/><br/>
                 <div className="row">
                     <div className="col-sm-12">
-                        <img className="ima" src="http://sigma.uniandes.edu.co/images/interface/universidad-de-los-andes-logo.png" alt=""/>
+                        <img className="ima" src="https://serea2017.uniandes.edu.co/images/Logo.png" alt=""/>
                     </div>
 
                 </div>
+                <br/><br/>
+                <center>
+                    <br/><br/>
+                    <a href="/userBooks"><button class="btn btn-primary empecemos" type="button"> Empecemos </button></a>
+                </center>
+
 
             </div>
         );

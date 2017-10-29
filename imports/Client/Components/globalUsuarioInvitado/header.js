@@ -19,7 +19,7 @@ export default class App extends Component
                         <div id="navbar" className  ="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="/">Inicia Sesion</a></li>
-                                <li><a href="/uiBooks">Mirar libros</a></li>
+                                <li><a href="/uiBooks">Ver libros disponibles</a></li>
                                 </ul>
                         </div>
 

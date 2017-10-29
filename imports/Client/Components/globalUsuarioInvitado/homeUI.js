@@ -38,10 +38,14 @@ export default class App extends Component
                 <br/><br/><br/>
                 <div className="row">
                     <div className="col-sm-12">
-                        <img className="ima" src="http://sigma.uniandes.edu.co/images/interface/universidad-de-los-andes-logo.png" alt=""/>
+                        <img className="ima" src="https://serea2017.uniandes.edu.co/images/Logo.png" alt=""/>
                     </div>
 
                 </div>
+                <center>
+                    <br/><br/>
+                    <a href="/uiBooks"><button class="btn btn-primary empecemos" type="button"> Empecemos </button></a>
+                </center>
 
             </div>
         );

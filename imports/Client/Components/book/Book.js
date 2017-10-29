@@ -14,7 +14,6 @@ export default class Book extends Component {
                         <br/>
                         <img className="imagenLibro" src={this.props.book.imagen} alt=""/><br/>
                         <br/>
-                        <p className="descLibro">Nombre del libro: {this.props.book.text}</p>
                         <p className="descLibro">Genero: {this.props.book.genero}</p>
                         <p className="descLibro">idioma: {this.props.book.idioma}</p>
                         <p className="descLibro"> <img className="landdl" src="https://noticiasmicrojuris.files.wordpress.com/2013/10/facebook-like.png" alt=""/> : {this.props.book.likes} </p>
@@ -23,7 +22,7 @@ export default class Book extends Component {
                     </div>
 
                     <div className="col-sm-8 ">
-                        <h2 className="tituloLibro">Historia:</h2><br/>
+                        <h2 className="tituloLibro">{this.props.book.text}</h2><br/>
                         <p className="historia">{this.props.book.texto} </p>
                     </div>
                 </div>
