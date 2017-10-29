@@ -24,8 +24,10 @@ Meteor.methods({
         Books.insert({
                 imagen: "https://d30y9cdsu7xlg0.cloudfront.net/png/3688-200.png",
                 text,
+                privado:false,
                 genero: "",
                 idioma: "",
+                colaboradores:"",
                 texto: "",
                 likes: 0,
                 dislikes: 0,
@@ -44,6 +46,13 @@ Meteor.methods({
 
         Books.remove(bookId);
     },
+    'books.addColaborador'(bookId, textvi, text) {
+        nText = (textvi + " " + text);
+        Books.update(bookId, {
+            $set: { colaboradores: nText , privado:true },
+        });
+    },
+
     'books.setChecked'(bookId, setChecked) {
         check(bookId, String);
         check(setChecked, Boolean);

@@ -48,7 +48,7 @@ class Book extends Component {
                         <h2 className="tituloLibro">{this.props.book.text}</h2><br />
 
                         <p className="historia">{this.props.book.texto}</p>
-                        {this.props.currentUser ?
+                        {this.props.currentUser && (this.props.book.privado == false || (this.props.book.username == Meteor.user().username) || (this.props.book.colaboradores != undefined && this.props.book.colaboradores.includes(Meteor.user().username ))) ?
                             <form onSubmit={this.editarStory.bind(this)}>
                                 <input type="text" ref="textInput" placeholder="Continuar con la historia" aria-label = "Agregar una nueva parte a la historia" />
                             </form> : ''}
@@ -57,6 +57,18 @@ class Book extends Component {
                             <br/>
                             Escrito por:<strong>{this.props.book.username}</strong>
                         </span></p><br />
+                        <br/><br/>
+
+                        {(this.props.currentUser && Meteor.user().username === this.props.book.username) ?
+
+
+
+                            <div>
+                                <p>Agregar compañero de Escritura</p>
+                                <form onSubmit={this.agregarColaborador.bind(this)}>
+                                    <input type="text" ref="colaborador" placeholder="Agregar compañero de escritura" aria-label = "Agregar nuevo compañero de escritura"/>
+                                </form></div> : ''}
+                        <br/><br/>
 
                         <strong>Comentarios</strong>
 
@@ -66,9 +78,13 @@ class Book extends Component {
                                 <input type="text" ref="textInputco" placeholder="Agregar Comentario" aria-label = "Agregar nuevo comentario"/>
                             </form> : ''}
                         <br/>
-                        {Meteor.user().username === this.props.book.username ?
+                        {(this.props.currentUser && Meteor.user().username === this.props.book.username) ?
                             <button className="delete btn" onClick={this.deleteThisTask.bind(this)}> Borrar Libro</button> : ''}
-                        <br/><br/></div>
+                        <br/><br/>
+
+
+                    </div>
+
 
                     <button className={this.props.book.botonBusqueda} onClick={this.salirBusqueda.bind(this)}>Salir de Busqueda</button>
                     <br/><br/>
@@ -115,6 +131,10 @@ class Book extends Component {
     editarStory() {
         const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
         Meteor.call('books.editarStory', this.props.book._id, this.props.book.texto, text);
+    }
+    agregarColaborador() {
+        const text = ReactDOM.findDOMNode(this.refs.colaborador).value.trim();
+        Meteor.call('books.addColaborador', this.props.book._id, this.props.book.colaboradores, text);
     }
     addComment() {
         const text = ReactDOM.findDOMNode(this.refs.textInputco).value.trim();

@@ -20,6 +20,7 @@
     "react-router": "^4.2.0"
   },
   "devDependencies": {
+    "enzyme": "^3.1.0",
     "faker": "^4.1.0"
   }
 }
