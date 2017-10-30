@@ -36,6 +36,7 @@ Meteor.methods({
                 mL: "hidden",
                 mI: "hidden",
                 busquedaH: "",
+                usuarioBuscado: "",
                 botonBusqueda: "hidden",
                 owner: Meteor.userId(),           // _id of logged in user
                 username: Meteor.user().username,  // username of logged in user
@@ -52,7 +53,11 @@ Meteor.methods({
             $set: { colaboradores: nText , privado:true },
         });
     },
-
+    'books.limpiarBuscado'(bookId) {
+        Books.update(bookId, {
+            $set: { usuarioBuscado: "" },
+        });
+    },
     'books.setChecked'(bookId, setChecked) {
         check(bookId, String);
         check(setChecked, Boolean);
@@ -66,6 +71,12 @@ Meteor.methods({
                 genero: text,
                 mG: "hidden"
             }
+        });
+    },
+    'books.usubuscado'(bookId, text) {
+        check(bookId, String);
+        Books.update(bookId, {
+            $set: { usuarioBuscado: text }
         });
     },
     'books.mostrarGenero'(bookId) {

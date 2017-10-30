@@ -7,8 +7,10 @@
     "\\imports\\Client",
     "\\imports\\Client\\Components",
     "\\imports\\Client\\Components\\book",
+    "\\imports\\Client\\Components\\globalusuariopro",
+    "\\imports\\Client\\Components\\task",
     "\\imports\\Client\\Components\\userBook"
   ],
-  "SelectedNode": "\\imports\\api\\books.js",
+  "SelectedNode": "\\imports\\api\\profiles.js",
   "PreviewInSolutionExplorer": false
 }

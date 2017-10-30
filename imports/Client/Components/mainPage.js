@@ -13,9 +13,9 @@ export default class App extends Component
 
                                 <br/><br/><br/>
 
-                                <a href="/user"><button class="btn btn-primary" type="button"> Iniciar Sesion </button></a>
+                                <a href="/user"><button className="btn btn-primary" type="button"> Iniciar Sesion </button></a>
                                 <br/><br/>
-                                <a href="/ui"><button class="btn btn-primary" type="button"> Continuar como invitado </button></a>
+                                <a href="/ui"><button className="btn btn-primary" type="button"> Continuar como invitado </button></a>
 
 
                             </div>

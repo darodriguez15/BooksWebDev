@@ -130,7 +130,6 @@ class Book extends Component {
     mostrarIdioma() {
         Meteor.call('books.mostrarIdioma', this.props.book._id);
     }
-
     editarStory() {
         const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
         Meteor.call('books.editarStory', this.props.book._id, this.props.book.texto, text);

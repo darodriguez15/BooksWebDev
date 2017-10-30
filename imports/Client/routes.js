@@ -10,7 +10,8 @@ import Task from "./Components/task/App";
 import Book from "./Components/book/App";
 import HomeUI from "./Components/globalUsuarioInvitado/homeUI";
 import HomeUser from "./Components/globalusuariopro/home";
-import UserBook from "./Components/userBook/App"
+import UserBook from "./Components/userBook/App";
+import Profile from "./Components/userBook/ProfileView";
 
 export const renderRoutes = () => (
     <Router history={browserHistory}>
@@ -21,9 +22,7 @@ export const renderRoutes = () => (
             <Route path="/ui" component={HomeUI}/>
             <Route path="/user" component={HomeUser} />
             <Route path="/userBooks" component={UserBook} />
-
-
-
+            <Route path="/profiles" component={Profile} />
         </div>
     </Router>
 );

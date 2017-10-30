@@ -178,7 +178,7 @@ class App extends Component {
                     </form>
                 </div>
 
-                <a class="btn btn-default 	proyectButton	" role="button" id="descrpBotuuno">Ver las opciones de busqueda &raquo;</a><br/><br/><br/><br/>
+                <a className="btn btn-default 	proyectButton	" role="button" id="descrpBotuuno">Ver las opciones de busqueda &raquo;</a><br/><br/><br/><br/>
 
 
             {this.props.currentUser ?

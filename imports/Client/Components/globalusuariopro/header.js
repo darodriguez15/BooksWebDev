@@ -17,8 +17,11 @@ export default class App extends Component
                             <a className="navbar-brand navi" href="/user">Books</a>
                         </div>
                         <div id="navbar" className  ="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul className="nav navbar-nav navbar-right">
                                 <li><a href="/userBooks">Empecemos</a></li>
+                            </ul>
+                            <ul className="nav navbar-nav navbar-right">
+                                <li><a href="/profiles">Perfil</a></li>
                             </ul>
                         </div>
 
