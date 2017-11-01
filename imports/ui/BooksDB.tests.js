@@ -54,6 +54,22 @@ if (Meteor.isServer) {
                 // Verify that the method does what we expected
                 assert.equal(newBooks.genero, "salsa");
             });
+            it('can create a comment in a Book', () => {
+                // Find the internal implementation of the task method so we can
+                // test it in isolation
+                const update = Meteor.server.method_handlers['books.addComment'];
+
+                // Set up a fake method invocation that looks like what the method expects
+                const invocation = { userId };
+
+                // Run the method with `this` set to the fake invocation
+                update.apply(invocation, [booksId,"comentario"]);
+
+                let newBooks = Books.findOne({ comments: "comentario" });
+
+                // Verify that the method does what we expected
+                assert.equal(newBooks.comments, "comentario");
+            });
             it('can delete a Book', () => {
                 // Find the internal implementation of the task method so we can
                 // test it in isolation

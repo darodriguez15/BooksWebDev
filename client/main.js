@@ -5,5 +5,6 @@ import '../imports/startup/accounts-config.js';
 import {renderRoutes} from "../imports/Client/routes";
 
 Meteor.startup(() => {
+    $('html').attr('lang','es');
     render(renderRoutes(), document.getElementById('target'));
 });

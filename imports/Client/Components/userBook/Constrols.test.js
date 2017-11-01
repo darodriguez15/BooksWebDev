@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { chai } from "meteor/practicalmeteor:chai";
-import Books from "./Books.jsx";
+import Books from "./Book";
 
 
 describe("Controls", () => {
