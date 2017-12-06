@@ -48,7 +48,7 @@ Meteor.methods({
         Books.remove(bookId);
     },
     'books.addColaborador'(bookId, textvi, text) {
-        nText = (textvi + " " + text);
+        let nText = (textvi + " " + text);  // nText no se declara
         Books.update(bookId, {
             $set: { colaboradores: nText , privado:true },
         });
@@ -104,17 +104,17 @@ Meteor.methods({
         });
     },
     'books.editarStory'(bookId, textvi, text) {
-        nText = (textvi + " " + text);
+        let nText = (textvi + " " + text);  // nText no se declara
         Books.update(bookId, {
             $set: { texto: nText },
         });
     },
-    'books.darLike'(bookId, likes, nLikes ) {
+    'books.darLike'(bookId, nLikes ) {  // el parametro likes no se utiliza en el método
         Books.update(bookId, {
              $set: { likes: nLikes },
          });
     },
-    'books.darDislike'(bookId, dLikes, nDlikes) {
+    'books.darDislike'(bookId,  nDlikes) {  // el parametro dLikes no se utiliza en el método
         Books.update(bookId, {
                 $set: { dislikes: nDlikes },
             });
