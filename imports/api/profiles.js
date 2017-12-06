@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
-
+//comentarios app
 
 export const Profiles = new Mongo.Collection('profiles');
 
